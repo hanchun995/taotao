@@ -36,4 +36,13 @@
 			<artifactId>commons-fileupload</artifactId>
 		</dependency>
 	</dependencies>
+		 <build>
+        <!-- 默认源代码和资源文件目录配置 -->  
+        <sourceDirectory>src/main/java</sourceDirectory>  
+        <resources>
+            <resource>  
+                <directory>src/main/resources</directory>  
+            </resource> 
+        </resources>
+    </build>
 </project>
