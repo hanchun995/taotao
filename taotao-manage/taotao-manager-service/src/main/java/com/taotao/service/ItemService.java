@@ -7,5 +7,7 @@ public interface ItemService {
 	TbItem getItemById(long itemId);
 	
 	EUDataGridResult getItemList(int page, int rows);
+	
+	void saveItem(TbItem item, String desc, String itemParams)throws Exception;
 
 }
