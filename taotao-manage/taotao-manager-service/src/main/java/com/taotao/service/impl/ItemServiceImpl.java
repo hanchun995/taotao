@@ -30,7 +30,7 @@ public class ItemServiceImpl implements ItemService {
 
 	@Autowired
 	private TbItemMapper itemMapper;
-	
+	@Autowired
 	private TbItemDescMapper itemDescMapper;
 
 	@Override
@@ -79,7 +79,7 @@ public class ItemServiceImpl implements ItemService {
 		itemDesc.setCreated(date);
 		itemDesc.setUpdated(date);
 		//插入数据
-		//itemDescMapper.insertSelective(itemDesc);
+		itemDescMapper.insert(itemDesc);
 		
 	}
 

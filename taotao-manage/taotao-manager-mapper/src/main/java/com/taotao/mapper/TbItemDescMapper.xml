@@ -124,8 +124,8 @@
   <insert id="insert" parameterType="com.taotao.pojo.TbItemDesc" >
     insert into tb_item_desc (item_id, created, updated, 
       item_desc)
-    values ('123231', '2017-2-5', '2017-2-5', 
-      '12315656464')
+    values ( #{itemId,jdbcType=BIGINT},#{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, 
+     #{itemDesc,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.taotao.pojo.TbItemDesc" >
     insert into tb_item_desc
