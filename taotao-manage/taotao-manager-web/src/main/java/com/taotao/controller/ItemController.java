@@ -34,9 +34,9 @@ public class ItemController {
 	
 	@RequestMapping("/save")
 	@ResponseBody
-		public TaotaoResult saveItem(TbItem item, String desc) throws Exception {
+		public TaotaoResult saveItem(TbItem item, String desc, String itemParams) throws Exception {
 			//添加商品信息
-			itemService.saveItem(item, desc, null);
+			itemService.saveItem(item, desc, itemParams);
 			return TaotaoResult.ok();
 		}
 }

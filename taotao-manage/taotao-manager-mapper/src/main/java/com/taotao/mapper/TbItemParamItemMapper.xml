@@ -6,6 +6,7 @@
     <result column="item_id" property="itemId" jdbcType="BIGINT" />
     <result column="created" property="created" jdbcType="TIMESTAMP" />
     <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+    <result column="param_data" property="paramData" jdbcType="LONGVARCHAR" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.taotao.pojo.TbItemParamItem" extends="BaseResultMap" >
     <result column="param_data" property="paramData" jdbcType="LONGVARCHAR" />
@@ -89,6 +90,11 @@
     <if test="orderByClause != null" >
       order by ${orderByClause}
     </if>
+  </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+    select
+     id, item_id, created, updated,param_data
+    from tb_item_param_item
   </select>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.taotao.pojo.TbItemParamItemExample" >
     select

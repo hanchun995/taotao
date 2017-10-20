@@ -19,6 +19,8 @@ public interface TbItemParamItemMapper {
     List<TbItemParamItem> selectByExampleWithBLOBs(TbItemParamItemExample example);
 
     List<TbItemParamItem> selectByExample(TbItemParamItemExample example);
+    
+    List<TbItemParamItem>  selectAll();
 
     TbItemParamItem selectByPrimaryKey(Long id);
 

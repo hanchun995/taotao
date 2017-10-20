@@ -13,9 +13,11 @@ import com.taotao.common.EUDataGridResult;
 import com.taotao.common.IDUtils;
 import com.taotao.mapper.TbItemDescMapper;
 import com.taotao.mapper.TbItemMapper;
+import com.taotao.mapper.TbItemParamItemMapper;
 import com.taotao.pojo.TbItem;
 import com.taotao.pojo.TbItemDesc;
 import com.taotao.pojo.TbItemExample;
+import com.taotao.pojo.TbItemParamItem;
 import com.taotao.service.ItemService;
 
 /**
@@ -32,6 +34,8 @@ public class ItemServiceImpl implements ItemService {
 	private TbItemMapper itemMapper;
 	@Autowired
 	private TbItemDescMapper itemDescMapper;
+	@Autowired
+	private TbItemParamItemMapper itemParamItemMapper;
 
 	@Override
 	public TbItem getItemById(long itemId) {
@@ -80,7 +84,13 @@ public class ItemServiceImpl implements ItemService {
 		itemDesc.setUpdated(date);
 		//插入数据
 		itemDescMapper.insert(itemDesc);
-		
+		//添加商品规格
+		TbItemParamItem itemParamItem = new TbItemParamItem();
+		itemParamItem.setItemId(id);
+		itemParamItem.setParamData(itemParams);
+		itemParamItem.setCreated(date);
+		itemParamItem.setUpdated(date);
+		itemParamItemMapper.insert(itemParamItem);
 	}
 
 }
