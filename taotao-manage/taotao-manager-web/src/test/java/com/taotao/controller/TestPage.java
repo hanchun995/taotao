@@ -16,23 +16,23 @@ public class TestPage {
 	
 	@Test
 	public void testPageHelper() {
-		//创建一个spring容器
+	/*	//鍒涘缓涓�釜spring瀹瑰櫒
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-*.xml");
-		//从spring容器中获得Mapper的代理对象
+		//浠巗pring瀹瑰櫒涓幏寰桵apper鐨勪唬鐞嗗璞�
 		TbItemMapper mapper = applicationContext.getBean(TbItemMapper.class);
-		//执行查询，并分页
+		//鎵ц鏌ヨ锛屽苟鍒嗛〉
 		TbItemExample example = new TbItemExample();
-		//分页处理
+		//鍒嗛〉澶勭悊
 		PageHelper.startPage(1, 10);
 		List<TbItem> list = mapper.selectByExample(example);
-		//取商品列表
+		//鍙栧晢鍝佸垪琛�
 		for (TbItem tbItem : list) {
 			System.out.println(tbItem.getTitle());
 		}
-		//取分页信息
+		//鍙栧垎椤典俊鎭�
 		PageInfo<TbItem> pageInfo = new PageInfo<>(list);
-		long total = pageInfo.getTotal();
-		System.out.println("共有商品："+ total);
+		long total = pageInfo.getTotal();*/
+		//System.out.println("鍏辨湁鍟嗗搧锛�+ total);
 		
 	}
 }
