@@ -9,4 +9,6 @@ public interface ContentService {
 	EUDataGridResult getContentList(long catId, Integer page, Integer rows) throws Exception;
 	
 	TaotaoResult addContent(TbContent content) throws Exception;
+	
+	TaotaoResult editContent(TbContent content) throws Exception;
 }

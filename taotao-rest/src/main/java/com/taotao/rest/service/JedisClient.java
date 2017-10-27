@@ -15,4 +15,6 @@ public interface JedisClient {
 	long expire(String key, int second);
 	
 	long ttl(String key) ;
+	
+	void hdel(String hkey, String key);
 }

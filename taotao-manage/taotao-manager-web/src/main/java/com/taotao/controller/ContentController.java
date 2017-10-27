@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.taotao.common.EUDataGridResult;
+import com.taotao.common.HttpClientUtil;
 import com.taotao.common.TaotaoResult;
 import com.taotao.pojo.TbContent;
 import com.taotao.service.ContentService;
@@ -16,6 +17,7 @@ public class ContentController {
 	
 	@Autowired
 	private ContentService contentService;
+	
 	
 	@RequestMapping("/query/list")
 	@ResponseBody
@@ -30,6 +32,14 @@ public class ContentController {
 	@ResponseBody
 	public TaotaoResult addContent(TbContent content) throws Exception {
 		TaotaoResult result = contentService.addContent(content);
+		return result;
+	}
+	
+	@RequestMapping("/edit")
+	@ResponseBody
+	public TaotaoResult editContent(TbContent content) throws Exception {
+		//修改首页广告内容
+		TaotaoResult result =contentService.editContent(content);
 		return result;
 	}
 }
