@@ -32,7 +32,7 @@ public class ContentServiceImpl implements ContentService {
 	public TaotaoResult getContentList(long cid) throws Exception {
 		
 		//从缓存中取内容
-	/*	try {
+		try {
 			String result = jedisClient.hget(INDEX_CONTENT_REDIS_KEY, cid + "");
 			if (!StringUtils.isNull(result)) {
 				//把字符串转换成list
@@ -41,7 +41,7 @@ public class ContentServiceImpl implements ContentService {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}*/
+		}
 		
 		
 		TbContentExample example = new TbContentExample();
@@ -51,13 +51,13 @@ public class ContentServiceImpl implements ContentService {
 		List<TbContent> list = contentMapper.selectByExample(example);
 		
 		//向缓存中添加内容
-	/*	try {
+		try {
 			//把list转换成字符串
 			String cacheString = JsonUtils.objectToJson(list);
 			jedisClient.hset(INDEX_CONTENT_REDIS_KEY, cid + "", cacheString);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}*/
+		}
 		
 		return TaotaoResult.ok(list);
 	}
