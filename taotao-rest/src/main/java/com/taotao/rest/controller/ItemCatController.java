@@ -11,7 +11,7 @@ import com.taotao.common.JsonUtils;
 import com.taotao.rest.service.ItemCatService;
 
 @Controller
-@RequestMapping("rest")
+@RequestMapping("/rest")
 public class ItemCatController {
 
 	

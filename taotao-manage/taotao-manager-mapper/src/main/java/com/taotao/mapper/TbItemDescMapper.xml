@@ -122,10 +122,8 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.taotao.pojo.TbItemDesc" >
-    insert into tb_item_desc (item_id, created, updated, 
-      item_desc)
-    values ( #{itemId,jdbcType=BIGINT},#{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, 
-     #{itemDesc,jdbcType=LONGVARCHAR})
+    insert into tb_item_desc (item_id, created, updated,item_desc)
+    values ( #{itemId,jdbcType=BIGINT},#{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP},#{itemDesc,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.taotao.pojo.TbItemDesc" >
     insert into tb_item_desc
