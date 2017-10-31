@@ -4,3 +4,7 @@
 .project
 .settings/
 */.gitignore
+*.class
+*.log
+*/target/
+*/logs/
