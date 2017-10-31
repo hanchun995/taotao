@@ -74,6 +74,14 @@ public class JedisClientSingle implements JedisClient{
 	public void hdel(String hkey, String key) {
 		Jedis jedis = jedisPool.getResource();
 		jedis.hdel(hkey, key);
+		jedis.del(key);
+		jedis.close();
+	}
+	
+	@Override
+	public void del(String key) {
+		Jedis jedis = jedisPool.getResource();
+		jedis.del(key);
 		jedis.close();
 	}
 	

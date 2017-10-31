@@ -52,4 +52,10 @@ public class JedisClientCluster implements JedisClient {
 		jedisCluster.hdel(hkey, key);
 	}
 
+	@Override
+	public void del(String key) {
+		jedisCluster.del(key);
+		
+	}
+
 }

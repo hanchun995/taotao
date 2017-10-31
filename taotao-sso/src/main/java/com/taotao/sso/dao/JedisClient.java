@@ -17,4 +17,6 @@ public interface JedisClient {
 	long ttl(String key) ;
 	
 	void hdel(String hkey, String key);
+	
+	void del(String key);
 }
