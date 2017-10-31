@@ -12,4 +12,6 @@ public interface UserService {
 	TaotaoResult userLogin(String username, String password);
 	
 	 TaotaoResult getUserByToken(String token);
+	 
+	 TaotaoResult logoutByToken(String token);
 }
