@@ -1,9 +1,9 @@
 package com.taotao.rest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.taotao.common.CatResult;
@@ -11,14 +11,14 @@ import com.taotao.common.JsonUtils;
 import com.taotao.rest.service.ItemCatService;
 
 @Controller
-@RequestMapping("/rest")
+@RequestMapping("/itemcat")
 public class ItemCatController {
 
 	
 	@Autowired
 	private ItemCatService itemCatService;
 
-	@RequestMapping(value="itemcat/all",produces=MediaType.APPLICATION_JSON_VALUE + ";charset=utf-8")
+	@RequestMapping(value="/all", method = RequestMethod.GET,produces= "application/json;charset=utf-8")
 	@ResponseBody
 	public String getItemCatList(String callback) {
 		CatResult catResult = itemCatService.getItemCatList();
