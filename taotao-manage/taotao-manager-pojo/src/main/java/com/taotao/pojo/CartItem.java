@@ -37,7 +37,7 @@ public class CartItem {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
+/*	
 	public String[] getImages() {
 		if (image != null) {
 			String[] images = getImage().split(",");
@@ -45,5 +45,5 @@ public class CartItem {
 		}
 		return null;
 	}
-	
+	*/
 }

@@ -113,7 +113,6 @@ public class UserServiceImpl implements UserService {
 		jedisClient.expire(REDIS_USER_SESSION_KEY + ":" + token, SSO_SESSION_EXPIRE);
 		//添加写cookie的逻辑，cookie的有效期是关闭浏览器就失效
 		CookieUtils.setCookie(request, response, "TT_TOKEN", token);
-		
 		// 返回token
 		return TaotaoResult.ok(token);
 	}
