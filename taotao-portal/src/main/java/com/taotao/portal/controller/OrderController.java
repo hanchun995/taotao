@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.taotao.pojo.CartItem;
 import com.taotao.pojo.Order;
+import com.taotao.pojo.TbUser;
 import com.taotao.portal.service.CartService;
 import com.taotao.portal.service.OrderService;
 
@@ -43,7 +44,12 @@ public class OrderController {
 	 * @return
 	 */
 	@RequestMapping("/create")
-	public String createOrder(Order order, Model model) {
+	public String createOrder(HttpServletRequest request,Order order, Model model) {
+		//从Request中取出用户信息
+		TbUser user=(TbUser)request.getAttribute("user");
+		// 在order对象中补全用户信息
+		order.setUserId(user.getId());
+		order.setBuyerMessage(user.getUsername());
 		String orderId = orderService.createOrder(order);
 		model.addAttribute("orderId", orderId);
 		model.addAttribute("payment", order.getPayment());
