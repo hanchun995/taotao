@@ -25,7 +25,7 @@ public class OrderServiceImpl implements OrderService {
 		//把json转换成taotaoResult
 		TaotaoResult taotaoResult = TaotaoResult.format(json);
 		if (taotaoResult.getStatus() == 200) {
-			Long orderId = (Long) taotaoResult.getData();
+			Long orderId =((Integer)taotaoResult.getData()).longValue();
 			return orderId.toString();
 		}
 		return "";

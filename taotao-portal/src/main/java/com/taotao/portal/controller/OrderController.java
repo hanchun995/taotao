@@ -35,6 +35,13 @@ public class OrderController {
 		return "order-cart";
 	}
 	
+	
+	/**
+	 * 完成生成订单
+	 * @param order
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/create")
 	public String createOrder(Order order, Model model) {
 		String orderId = orderService.createOrder(order);
